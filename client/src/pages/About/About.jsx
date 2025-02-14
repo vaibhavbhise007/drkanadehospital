@@ -4,7 +4,6 @@ import DoctorPhoto from "../../assets/DoctorPhoto.png";
 import OurSpecialists from "../../components/home/OurSpecialists";
 import ProfileSlider from "../../components/about/ProfileSlider";
 import { useEffect } from "react";
-import backgroundImage2 from "../../assets/aboutBackgroundImg.jpg";
 
 export default function About() {
   useEffect(() => {
@@ -24,10 +23,10 @@ export default function About() {
     <>
       <div className="bg-white">
         <div className="bg-[rgb(107,71,55)]/45  pt-16 relative">
-          <div className="py-16 mb-8 opacity-80 bg-opacity-50 bg-cover -z-0 ">
+          <div className="py-4 mb-2 opacity-80 bg-opacity-50 bg-cover -z-0 ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center text-black p-6">
-                <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+                <h1 className="text-3xl sm:text-4xl font-bold pt-10">
                   About Dr. Kanade Hospital
                 </h1>
                 <p className="text-base sm:text-lg font-serif text-gray-600">
@@ -112,46 +111,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* <div className="bg-[#e6dfdf] ">
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 p-8">
-          <div className="grid md:grid-cols-3 gap-8 ">
-            {[
-              {
-                icon: <Award className="h-8 w-8 text-[rgb(107,71,55)] " />,
-                title: "15+ Years Experience",
-                description:
-                  "Dedicated years of service in advanced medical care",
-              },
-              {
-                icon: <Users className="h-8 w-8 text-[rgb(107,71,55)]" />,
-                title: "10,000+ Patients",
-                description:
-                  "Successfully treated patients from across the country",
-              },
-              {
-                icon: <Heart className="h-8 w-8 text-[rgb(107,71,55)]" />,
-                title: "98% Success Rate",
-                description: "High success rate with minimal recovery time",
-              },
-            ].map((stat, index) => (
-              <Card
-                key={index}
-                className="p-6 text-center hover:shadow-xl transition-shadow bg-white"
-              >
-                <div className="flex flex-col items-center">
-                  {stat.icon}
-                  <h3 className="mt-4 text-xl font-serif text-black">
-                    {stat.title}
-                  </h3>
-                  <p className="mt-2 text-gray-600 font-serif">
-                    {stat.description}
-                  </p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </div> */}
         <ProfileSlider />
       </div>
       <OurSpecialists />

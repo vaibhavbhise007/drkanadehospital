@@ -46,8 +46,8 @@ export default function Navbar() {
           ))}
           <Button
             onClick={() => {
-              navigate("/appointment");
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              // navigate("/appointment");
+              window.location.href = "tel:+91 9420636736";
             }}
             className="bg-[rgb(107,71,55)] hover:bg-[#B39362] text-white"
           >
@@ -81,8 +81,7 @@ export default function Navbar() {
             className="w-full bg-[#C5A572] hover:bg-[#B39362] text-white mt-4"
             onClick={() => {
               setIsOpen(false);
-              navigate("/appointment");
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              window.location.href = "tel:+91 9420636736";
             }}
           >
             Book Appointment
