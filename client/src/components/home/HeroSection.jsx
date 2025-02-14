@@ -23,7 +23,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative bg-[#f3bfbf] text-black py-20 rounded overflow-hidden pt-36">
+    <section className="relative text-black py-20 rounded overflow-hidden pt-36">
       <div
         className="absolute inset-0 -z-0 bg-cover bg-center"
         style={{

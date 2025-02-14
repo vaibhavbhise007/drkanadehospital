@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./src/**/*.{html,js,jsx,ts,tsx}", // Ensure you have the correct paths for your files
