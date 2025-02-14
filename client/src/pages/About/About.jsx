@@ -22,7 +22,7 @@ export default function About() {
   return (
     <>
       <div className="bg-white">
-        <div className="bg-[rgb(107,71,55)]/45  pt-16 relative">
+        <div className="bg-[rgb(107,71,55)]/15  pt-16 relative">
           <div className="py-4 mb-2 opacity-80 bg-opacity-50 bg-cover -z-0 ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center text-black p-6">

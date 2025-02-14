@@ -22,6 +22,7 @@ import { useEffect, useState } from "react";
 export default function App() {
   // Show loader until session is fetched
   const [loading, setLoading] = useState(true);
+  const [mainLoading, setMainLoading] = useState(true); // New loader for main page
 
   useEffect(() => {
     const handleLoadComplete = () => setLoading(false);
@@ -30,11 +31,27 @@ export default function App() {
     return () => clearTimeout(timer); // Cleanup
   }, []);
 
+  useEffect(() => {
+    const mainLoaderTimer = setTimeout(() => setMainLoading(false), 1000); // Show loader for 1 sec
+    return () => clearTimeout(mainLoaderTimer);
+  }, []);
+
   if (loading) {
-    <div className="flex justify-center items-center h-full">
-      <LoaderWithImage />
-    </div>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <LoaderWithImage />
+      </div>
+    );
   }
+
+  if (mainLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Loader />
+      </div>
+    );
+  }
+
   // Main routes for logged-in users
   const mainRoutes = [
     { path: "/", element: <Home /> },
