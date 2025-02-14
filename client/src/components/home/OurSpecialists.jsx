@@ -4,7 +4,7 @@ import { Button } from "../ui/Button";
 import { useNavigate } from "react-router-dom";
 import dattakanade from "../../assets/dattakanade.png";
 import swatikanade from "../../assets/swatikanade.png";
-import bgimg from '../../assets/bgdoctor.jpg';
+import bgimg from "../../assets/texture1.jpg";
 
 export default function OurSpecialists() {
   const navigate = useNavigate();
@@ -27,9 +27,9 @@ export default function OurSpecialists() {
   ];
 
   return (
-    <div className="relative py-8">
+    <div className="relative py-8 bg-[#e6dfdf]/35 ">
       <div
-        className="absolute inset-0 -z-50 bg-cover"
+        className="absolute inset-0 -z-50 bg-cover opacity-70"
         style={{
           backgroundImage: `url(${bgimg})`,
           opacity: 0.5,
@@ -44,7 +44,7 @@ export default function OurSpecialists() {
         {specialists.map((member) => (
           <Card
             key={member.id}
-            className="p-3 text-center w-60 bg-white hover:shadow-2xl transition-shadow "
+            className="p-3 text-center w-60 bg-white hover:shadow-2xl transition-shadow rounded-lg"
           >
             <img
               src={member.image}

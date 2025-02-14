@@ -50,25 +50,16 @@ function ProfileSlider() {
         <h1 className="text-xl font-bold">Why We Stand Out?</h1>
         <div className="w-40 border-t-4 border-orange-950"></div>
         <br />
-        <div className="p-6 px-24 pt-20 flex flex-row gap-10">
+        <div className="p-6 px-24 pt-6 flex flex-row gap-10">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`relative basis-1/2 ${feature.bgClass} rounded-3xl h-80 p-4 pt-16 group hover:scale-110 transition-all duration-200 hover:bg-[#803e3e] cursor-default`}
+              className={`relative basis-1/2 rounded-3xl h-80 p-4 pt-16 group hover:scale-110 transition-all duration-200 bg-[#803e3e] cursor-default`}
             >
-              <div
-                className={`absolute ${feature.iconClass} rounded-full bg-black p-1`}
-              >
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className="bg-cover"
-                />
-              </div>
               <h1 className="text-center text-white font-bold text-xl">
                 {feature.title}
               </h1>
-              <p className="text-center text-md pt-4 group-hover:text-white font-serif">
+              <p className="text-center text-md pt-4 text-white font-serif">
                 {feature.description}
               </p>
             </div>

@@ -2,9 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/Button";
 import drimage from "../../assets/dr.png";
 import { useNavigate } from "react-router-dom";
-import hero from "../../assets/svg/herosection.svg";
 import React, { useEffect, useState } from "react";
-import textureimg from "../../assets/texture.jpg";
 import BlurText from "../ui/BlurText";
 import ErrorBoundary from "../error/ErrorBoundary";
 import backgroundImg from "../../assets/landingpageimg.jpg";
@@ -59,7 +57,9 @@ export default function HeroSection() {
               treatments with minimal recovery time at Dr. Kanade Hospital.
             </p>
             <Button
-              onClick={() => navigate("/appointment")}
+              onClick={() => {
+                window.location.href = "tel:+91 9420636736";
+              }}
               className="bg-[rgb(107,71,55)] hover:bg-[#B39362] text-white px-6 py-3 text-lg rounded shadow-lg transition-transform transform hover:scale-105"
             >
               Book Appointment <ArrowRight className="ml-2 h-4 w-4" />

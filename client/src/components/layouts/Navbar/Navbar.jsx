@@ -46,7 +46,6 @@ export default function Navbar() {
           ))}
           <Button
             onClick={() => {
-              // navigate("/appointment");
               window.location.href = "tel:+91 9420636736";
             }}
             className="bg-[rgb(107,71,55)] hover:bg-[#B39362] text-white"

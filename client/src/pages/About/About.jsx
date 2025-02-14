@@ -1,5 +1,6 @@
 import { Target, Globe } from "lucide-react";
-import backgroundImage1 from "../../assets/AboutsUsBackgroundImage.jpg";
+import backgroundImage1 from "../../assets/img1.jpg";
+import backgroundImage2 from "../../assets/AboutsUsBackgroundImage.jpg";
 import DoctorPhoto from "../../assets/DoctorPhoto.png";
 import OurSpecialists from "../../components/home/OurSpecialists";
 import ProfileSlider from "../../components/about/ProfileSlider";
@@ -22,27 +23,29 @@ export default function About() {
   return (
     <>
       <div className="bg-white">
-        <div className="bg-[rgb(107,71,55)]/15  pt-16 relative">
-          <div className="py-4 mb-2 opacity-80 bg-opacity-50 bg-cover -z-0 ">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center text-black p-6">
-                <h1 className="text-3xl sm:text-4xl font-bold pt-10">
-                  About Dr. Kanade Hospital
-                </h1>
-                <p className="text-base sm:text-lg font-serif text-gray-600">
-                  Leading the way in advanced Laser surgery for piles, fistulas,
-                  fissures, varicose veins, and more.
-                </p>
-              </div>
+        <div className="bg-[rgb(107,71,55)]/15  py-16 relative mb-2">
+          <div
+            className="absolute opacity-70 inset-0 bg-cover -z-60"
+            style={{ backgroundImage: `url(${backgroundImage1})` }}
+          ></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center text-black pt-10">
+              <h1 className="text-3xl sm:text-4xl font-bold pt-14">
+                About Dr. Kanade Hospital
+              </h1>
+              <p className="text-base sm:text-lg font-serif text-gray-600">
+                Leading the way in advanced Laser surgery for piles, fistulas,
+                fissures, varicose veins, and more.
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="relative ">
+        <div className="relative">
           <div
             className="absolute opacity-40 inset-0 bg-cover -z-60"
             style={{
-              backgroundImage: `url(${backgroundImage1})`,
+              backgroundImage: `url(${backgroundImage2})`,
             }}
           ></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

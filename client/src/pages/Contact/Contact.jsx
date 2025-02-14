@@ -3,9 +3,7 @@ import { Button } from "../../components/ui/Button";
 import { Input } from "../../components/ui/Input";
 import { Textarea } from "../../components/ui/Textarea";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { sendContactFormData } from "../../stores/actions/contactAction";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,8 +14,9 @@ export default function Contact() {
     message: "",
   });
 
-  const dispatch = useDispatch();
-  const { loading, success, error } = useSelector((state) => state.contact);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -28,7 +27,21 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(sendContactFormData(formData));
+
+    const { firstName, lastName, email, phoneNumber, message } = formData;
+    const whatsappNumber = "+91 8208423324"; // Use international format without '+'
+
+    // Format the message for WhatsApp
+    const whatsappMessage = `Hello, I am ${firstName} ${lastName}.\nEmail: ${email}\nPhone: ${phoneNumber}\nMessage: ${message}`;
+
+    // Encode the message for a URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
   };
 
   return (
