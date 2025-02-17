@@ -47,3 +47,33 @@
 .animate-move-shape-reverse {
   animation: move-shape-reverse 5s infinite ease-in-out;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  min-width: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-wrapper {
+  display: flex;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 60s linear infinite;
+}
+
+.marquee-content span {
+  white-space: nowrap;
+  padding-right: 2rem; /* Space between repeated elements */
+}

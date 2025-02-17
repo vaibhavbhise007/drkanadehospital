@@ -57,7 +57,11 @@ export default function OurSpecialists() {
             </p>
             <p className="text-gray-600 font-serif text-sm">{member.role}</p>
             <Button
-              onClick={() => navigate(`/profile/${member.id}`)}
+              onClick={() => {
+                navigate(`/profile/${member.id}`, {
+                  state: { scrollToTop: true },
+                });
+              }}
               className="bg-[rgb(107,71,55)] hover:bg-[#B39362] text-white w-28 h-8 mt-2"
               aria-label={`View Profile of ${member.name}`}
             >

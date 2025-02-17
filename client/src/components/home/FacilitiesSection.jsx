@@ -8,6 +8,57 @@ import f5 from "../../assets/f5.jpg";
 import f6 from "../../assets/f6.jpg";
 
 function FacilitiesSection() {
+  const facilities = [
+    {
+      img: f1,
+      title: "Hospital Pharmacy",
+      description:
+        "24/7 pharmacy services with a wide range of medicines available for patients. " +
+        "Well-stocked with essential and emergency medications. " +
+        "Qualified pharmacists to guide patients on prescriptions and dosages.",
+    },
+    {
+      img: f2,
+      title: "Ample Parking Space",
+      description:
+        "Spacious and secure parking facility for visitors and staff. " +
+        "Round-the-clock security and surveillance. " +
+        "Designated spaces for emergency and special needs parking.",
+    },
+    {
+      img: f3,
+      title: "Emergency Response System",
+      description:
+        "Quick response emergency team available at all times for critical situations. " +
+        "Advanced life-saving equipment to handle emergencies efficiently. " +
+        "Trained professionals ensuring immediate medical assistance.",
+    },
+    {
+      img: f4,
+      title: "Cardiac Life Support Ambulances",
+      description:
+        "Fully equipped ambulances for cardiac emergencies and critical care transport. " +
+        "Monitored by trained paramedics and cardiologists. " +
+        "Advanced medical devices for real-time monitoring and first aid.",
+    },
+    {
+      img: f5,
+      title: "Pathology Lab Services",
+      description:
+        "State-of-the-art diagnostic lab services for accurate medical tests. " +
+        "Fast and reliable test results with expert analysis. " +
+        "Equipped with modern testing equipment for precise diagnosis.",
+    },
+    {
+      img: f6,
+      title: "Special Rooms & General Ward",
+      description:
+        "Comfortable and hygienic rooms with all necessary facilities for patients. " +
+        "Private and semi-private rooms with personalized care. " +
+        "Ensuring a stress-free and healing environment for all patients.",
+    },
+  ];
+
   return (
     <section className="relative px-4 lg:px-8">
       <div
@@ -17,7 +68,7 @@ function FacilitiesSection() {
           opacity: 0.2,
         }}
       ></div>
-      <div className="text-center py-4 ">
+      <div className="text-center py-4">
         <h1 className="text-4xl font-bold text-gray-900 py-4">
           Amenities In Kanade Hospital
         </h1>
@@ -31,80 +82,30 @@ function FacilitiesSection() {
 
       {/* Main Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 px-8 pb-8">
-        {/* Facility 1 */}
-        <div className="bg-white hover:shadow-xl p-6 flex flex-col sm:flex-row items-center sm:space-x-4 sm:space-y-0 border-1 border-black transition-transform transform hover:scale-105 group overflow-hidden">
-          <div className="absolute w-full h-60 -top-6 -left-96 rounded-r-full bg-black  text-center group-hover:opacity-100 group-hover:left-0 opacity-0 transition-all duration-500 text-white pt-10">
-            Kaustubh
+        {facilities.map((facility, index) => (
+          <div
+            key={index}
+            className="relative bg-white hover:shadow-xl p-6 flex flex-col lg:flex-row items-center sm:space-x-4 sm:space-y-0 border transition-transform transform hover:scale-105 group overflow-hidden"
+          >
+            {/* Image */}
+            <img
+              src={facility.img}
+              alt={facility.title}
+              className="w-full sm:w-60 h-34 object-cover sm:mb-0"
+            />
+
+            {/* Title */}
+            <h2 className="text-lg font-bold text-black text-center sm:text-left mb-4 sm:mb-0">
+              {facility.title}
+            </h2>
+
+            {/* Hover Slide-in Effect */}
+            <div className="absolute top-0 left-[-100%] w-full h-full bg-black bg-opacity-80 text-white flex flex-col items-center justify-center text-center p-4 px-8 transition-all duration-500 group-hover:-left-10">
+              <p className="text-lg font-semibold">{facility.title}</p>
+              <p className="text-sm">{facility.description}</p>
+            </div>
           </div>
-          <img
-            src={f1}
-            alt="Hospital Pharmacy"
-            className="w-full sm:w-60 h-34 object-cover sm:mb-0"
-          />
-          <h2 className="text-lg font-bold text-black text-center sm:text-left mb-4 sm:mb-0">
-            Hospital Pharmacy
-          </h2>
-        </div>
-
-        {/* Facility 2 */}
-        <div className="bg-white hover:shadow-lg p-6 flex flex-col sm:flex-row items-center sm:space-x-4 sm:space-y-0 border-1 border-black transition-transform transform hover:scale-105">
-          <img
-            src={f2}
-            alt="Ample Parking Space"
-            className="w-full sm:w-60 h-34 object-cover sm:mb-0"
-          />
-          <h2 className="text-lg font-bold text-black text-center sm:text-left mb-4 sm:mb-0">
-            Ample Parking Space
-          </h2>
-        </div>
-
-        {/* Facility 3 */}
-        <div className="bg-white hover:shadow-xl p-6 flex flex-col sm:flex-row items-center sm:space-x-4 sm:space-y-0 border-1 border-black transition-transform transform hover:scale-105">
-          <img
-            src={f3}
-            alt="Emergency Response System"
-            className="w-full sm:w-60 h-34 object-cover sm:mb-0"
-          />
-          <h2 className="text-lg font-bold text-black text-center sm:text-left mb-4 sm:mb-0">
-            Emergency Response System
-          </h2>
-        </div>
-
-        {/* Facility 4 */}
-        <div className="bg-white hover:shadow-lg p-6 flex flex-col sm:flex-row items-center sm:space-x-4 sm:space-y-0 border-1 border-black transition-transform transform hover:scale-105">
-          <img
-            src={f4}
-            alt="Cardiac Life Support Ambulances"
-            className="w-full sm:w-60 h-34 object-cover sm:mb-0"
-          />
-          <h2 className="text-lg font-bold text-black text-center sm:text-left mb-4 sm:mb-0">
-            Cardiac Life Support Ambulances
-          </h2>
-        </div>
-
-        {/* Facility 5 */}
-        <div className="bg-white hover:shadow-xl p-6 flex flex-col sm:flex-row items-center sm:space-x-4 sm:space-y-0 border-1 border-black transition-transform transform hover:scale-105">
-          <img
-            src={f5}
-            alt="Pathology Lab Services"
-            className="w-full sm:w-60 h-34 object-cover sm:mb-0"
-          />
-          <h2 className="text-lg font-bold text-black text-center sm:text-left mb-4 sm:mb-0">
-            Pathology Lab Services
-          </h2>
-        </div>
-
-        {/* Facility 6 */}
-        <div className="bg-white hover:shadow-lg p-6 flex flex-col sm:flex-row items-center sm:space-x-4 sm:space-y-0 border-1 border-black transition-transform transform hover:scale-105">
-          <img
-            src={f6}
-            alt="Special Rooms & General Ward"
-            className="w-full sm:w-60 h-34 object-cover sm:mb-0"
-          />
-          <h2 className="text-lg font-bold text-black text-center sm:text-left mb-4 sm:mb-0">
-            Special Rooms & General Ward
-          </h2>
-        </div>
+        ))}
       </div>
     </section>
   );

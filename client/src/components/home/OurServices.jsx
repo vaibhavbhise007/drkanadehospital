@@ -183,7 +183,9 @@ function OurTreatments() {
 
         <div className="flex justify-center items-center mt-10">
           <Button
-            onClick={() => navigate("/treatments")}
+            onClick={() => {
+              navigate("/treatments", { state: { scrollToTop: true } });
+            }}
             className="bg-sky-300 text-black px-6 py-3 text-lg rounded shadow-lg transition-transform transform hover:scale-105"
           >
             View all Treatments

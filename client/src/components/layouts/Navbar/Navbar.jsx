@@ -22,14 +22,14 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white fixed z-50 w-full shadow-md">
-      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-28">
+      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-20">
         <NavLink to="/" onClick={handleLinkClick} className="flex items-center">
-          <img src={logo} className="h-20 w-20" alt="Logo" />
-          <span className="ml-2 text-2xl font-bold text-gray-800">
+          <img src={logo} className="h-16 w-16" alt="Logo" />
+          <span className="ml-2 text-1xl font-bold text-gray-800">
             Dr. Kanade Hospital
           </span>
         </NavLink>
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-2">
           {links.map(({ to, label }) => (
             <NavLink
               key={to}

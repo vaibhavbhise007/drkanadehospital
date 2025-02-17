@@ -30,7 +30,7 @@ export default function HeroSection() {
         }}
       ></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center pt-6">
           {/* Text Section */}
           <div
             className={`transition-all duration-700 ${
@@ -46,7 +46,7 @@ export default function HeroSection() {
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
-                className="text-2xl"
+                className="text-xl sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl text-center px-2"
               />
             </ErrorBoundary>
             {/* <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">

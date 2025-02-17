@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../components/Loader/Loader";
 import bgimg from "../../assets/bgdoctor.jpg";
 import TreatmentCard from "../../components/ui/TreatmentCard";
-import  Skeleton  from "../../components/Loader/SkeletonLoader.jsx"; //
+import Skeleton from "../../components/Loader/SkeletonLoader.jsx"; //
+import { useLocation } from "react-router-dom";
 
 export default function Treatments() {
   const dispatch = useDispatch();
@@ -16,6 +17,14 @@ export default function Treatments() {
     const timer = setTimeout(() => setLoading(false), 1000); // Simulate loading time
     return () => clearTimeout(timer); // Cleanup
   }, []);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollToTop) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location]);
 
   return (
     <div className="flex flex-col">

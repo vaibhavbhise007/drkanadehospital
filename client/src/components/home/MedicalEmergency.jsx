@@ -31,7 +31,14 @@ export default function MedicalEmergency() {
             <div className="bg-[rgb(202,127,96)] w-full md:w-2/3 sm:w-1/2 rounded-xl flex items-center justify-center py-3 relative group hover:bg-[rgb(107,71,55)] transition-all duration-300">
               <div className="flex items-center md:text-md lg:text-lg text-black group-hover:text-white transition-all duration-300">
                 <AddIcCallIcon className="mr-2" />
-                <p className="pl-2">+91-9420636736</p>
+                <p
+                  className="pl-2"
+                  onClick={() => {
+                    window.location.href = "tel:+91 9420636736";
+                  }}
+                >
+                  +91-9420636736
+                </p>
               </div>
             </div>
           </div>

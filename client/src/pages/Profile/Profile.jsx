@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
 import Doctor1 from "../../assets/dattakanade.png";
 import Doctor2 from "../../assets/swatikanade.png";
 const doctorsData = [
@@ -34,8 +34,15 @@ const doctorsData = [
 ];
 
 const DoctorProfile = ({ doctor }) => {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.state?.scrollToTop) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location]);
+
   return (
-    <section className="bg-gray-100 py-12 px-4">
+    <section className="bg-gray-100 py-40 px-4">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-1 items-start">
         {/* Image Section */}
         <div className="flex justify-center">
