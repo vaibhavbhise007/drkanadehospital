@@ -71,6 +71,7 @@ export default function Contact() {
                       First Name
                     </label>
                     <Input
+                      required
                       type="text"
                       placeholder="John"
                       name="firstName"
@@ -83,6 +84,7 @@ export default function Contact() {
                       Last Name
                     </label>
                     <Input
+                      required
                       type="text"
                       placeholder="Doe"
                       name="lastName"
@@ -108,6 +110,7 @@ export default function Contact() {
                     Phone
                   </label>
                   <Input
+                    required
                     type="tel"
                     placeholder="+91 123 456 7890"
                     name="phoneNumber"
@@ -120,6 +123,7 @@ export default function Contact() {
                     Message
                   </label>
                   <Textarea
+                    required
                     placeholder="How can we help you?"
                     className="h-32"
                     name="message"

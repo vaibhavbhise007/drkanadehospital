@@ -116,7 +116,7 @@ function TreatmentsPage() {
         <div className="flex flex-col-reverse lg:flex-row  gap-4 justify-center p-4 px-16 pt-14">
           {/* Text Content Section */}
           <div className="basis-1/2 px-8">
-            <h2 ref={aboutSection} className="text-3xl font-bold text-black">
+            <h2 ref={aboutSection} className="text-3xl font-bold text-black ">
               About {treatment.title}
             </h2>
             <p className="text-gray-600 text-xl font-serif mt-4">
