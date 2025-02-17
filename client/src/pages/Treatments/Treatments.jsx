@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTreatments } from "../../stores/actions/treatmentAction";
 import Loader from "../../components/Loader/Loader";
 import bgimg from "../../assets/bgdoctor.jpg";
 import TreatmentCard from "../../components/ui/TreatmentCard";
@@ -10,11 +9,6 @@ export default function Treatments() {
   const { treatments, loading, error } = useSelector(
     (state) => state.treatment
   );
-
-  // useEffect(() => {
-  //   dispatch(fetchTreatments());
-  // }, [dispatch]);
-
   const [xloading, setLoading] = useState(true);
 
   useEffect(() => {
