@@ -36,16 +36,17 @@ export default function CampSection() {
   return (
     <section
       ref={ref}
-      className={`px-6 sm:px-10 pb-8 bg-gray-100 pt-6 transition-opacity duration-1000 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
+      className={`px-6 sm:px-10 pb-8 bg-gray-100 pt-6 transition-opacity duration-1000 ${
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
     >
       <div className="text-center text-xl sm:text-2xl font-bold text-gray-800 mb-6">
-        Free Women's Health & Gynecology Camp  - Rahata
+        Free Women's Health & Gynecology Camp - Rahata
       </div>
       <p className="text-center text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
         A Women's Health & Gynecology Camp has been organized to provide free
-        consultations, health screenings, and educational support on topics
-        like menstrual health, pregnancy, family planning, and menopause.
+        consultations, health screenings, and educational support on topics like
+        menstrual health, pregnancy, family planning, and menopause.
       </p>
       <div className="pt-6 max-w-2xl mx-auto">
         {" "}
@@ -55,7 +56,7 @@ export default function CampSection() {
               <img
                 src={CampImg1}
                 alt={`Camp Image ${index + 1}`}
-                className="rounded-md shadow-lg w-full max-h-80 object-cover hover:scale-105 transition-transform duration-300"
+                className="rounded-md shadow-lg w-full max-h-80 object-cover transition-transform duration-300"
               />
             </div>
           ))}

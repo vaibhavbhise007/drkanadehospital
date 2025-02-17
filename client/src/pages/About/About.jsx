@@ -73,7 +73,7 @@ export default function About() {
                 </button>
               </div>
 
-              <div className="pt-10 sm:pt-0 flex justify-center pb-8">
+              <div className="pt-10 sm:pt-0 flex justify-center ">
                 <img
                   src={DoctorPhoto}
                   alt="Dr. Datta Kanade"

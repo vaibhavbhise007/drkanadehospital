@@ -11,26 +11,19 @@ const BlurText = ({
   animationFrom,
   animationTo,
   easing = "ease-out",
-  onAnimationComplete,
 }) => {
   const elements = animateBy === "words" ? text.split(" ") : text.split("");
   const [inView, setInView] = useState(false);
   const ref = useRef();
-  const [mounted, setMounted] = useState(false); // Ensure component is mounted before applying transitions
+  const [mounted, setMounted] = useState(false);
 
   const defaultFrom =
     direction === "top"
-      ? "filter blur-sm opacity-0 transform -translate-y-12"
-      : "filter blur-sm opacity-0 transform translate-y-12";
+      ? "filter blur-md opacity-0 transform -translate-y-6"
+      : "filter blur-md opacity-0 transform translate-y-6";
 
-  const defaultTo = [
-    direction === "top"
-      ? "filterc text-4xl md:text-5xl font-bold mb-3 leading-tight transform translate-y-1"
-      : "filter  text-4xl md:text-5xl font-bold mb-3 leading-tight transform -translate-y-1",
-    "filter text-4xl md:text-5xl font-bold mb-3 leading-tight  transform translate-y-0",
-  ];
+  const defaultTo = "filter blur-none opacity-100 transform translate-y-0";
 
-  // Intersection Observer for triggering animation when in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -42,32 +35,32 @@ const BlurText = ({
       { threshold, rootMargin }
     );
 
-    observer.observe(ref.current);
+    if (ref.current) observer.observe(ref.current);
 
     return () => observer.disconnect();
   }, [threshold, rootMargin]);
 
-  // Ensure animations only run after component has mounted
   useEffect(() => {
     setMounted(true);
   }, []);
 
   return (
-    <h1 ref={ref} className={` ${className} flex  flex-wrap`}>
+    <h1 ref={ref} className={`flex flex-wrap ${className}`}>
       {elements.map((el, index) => (
         <span
           key={index}
-          className={`inline-block transition-all duration-500 ${className} ${
+          className={`inline-block transition-all duration-500 ${
             mounted && inView
               ? animationTo || defaultTo
               : animationFrom || defaultFrom
           }`}
           style={{
             transitionDelay: `${index * delay}ms`,
+            transitionTimingFunction: easing,
           }}
         >
-          {el === " " ? " " : el}
-          {animateBy === "words" && index < elements.length - 1 && " "}
+          {el === " " ? "\u00A0" : el}
+          {animateBy === "words" && index < elements.length - 1 && "\u00A0"}
         </span>
       ))}
     </h1>
