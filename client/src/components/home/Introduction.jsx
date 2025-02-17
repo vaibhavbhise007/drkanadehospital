@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import img from '../../assets/intro.jpg';
-
+import BlurText from "../../components/effects/BlurText.jsx";
 export default function Introduction() {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
+
+    const handleAnimationComplete = () => {
+        console.log('Animation completed!');
+    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -44,13 +48,20 @@ export default function Introduction() {
 
                     {/* Text Section with Transition */}
                     <div
-                        className={`transition-all duration-700 transform ${
-                            isVisible ? 'opacity-100 translate-x-0 animate__fadeInRight' : 'opacity-0 translate-x-10'
-                        }`}
+                        className={`transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-x-0 animate__fadeInRight' : 'opacity-0 translate-x-10'
+                            }`}
                     >
-                        <h1 className="text-2xl font-bold mb-6">
+                        {/* <h1 className="text-2xl font-bold mb-6">
                             Welcome To Dr. Kanade Hospital and Laparoscopy Center
-                        </h1>
+                        </h1> */}
+                        <BlurText
+                            text="Welcome To Dr. Kanade Hospital and Laparoscopy Center"
+                            delay={150}
+                            animateBy="words"
+                            direction="top"
+                            onAnimationComplete={handleAnimationComplete}
+                            className="text-2xl mb-8"
+                        />
                         <p className="text-lg font-serif mb-8">
                             Dr. Kanade Hospital, situated on Nagar-Manmad Road, Rahata (Shirdi), Ahmednagar, is a distinguished
                             multispecialty healthcare center renowned for its advanced medical treatments and state-of-the-art facilities.
