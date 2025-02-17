@@ -4,6 +4,7 @@ import { Input } from "../../components/ui/Input";
 import { Textarea } from "../../components/ui/Textarea";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
+import bgimg from '../../assets/contact.jpg'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -45,12 +46,18 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-white pt-16">
+    <div className="bg-white pt-24">
+
       <div className="relative py-16 bg-[#e6dfdf]">
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-black">
-            <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-            <p className="text-lg text-gray-600 font-serif">
+            <div
+              className="absolute opacity-100 inset-0 bg-cover "
+              style={{ backgroundImage: `url(${bgimg || ""})` }}
+            ></div>
+            <h1 className="text-4xl font-bold mb-4 relative">Contact Us</h1>
+            <p className="text-lg text-gray-600 font-serif relative">
               Get in touch with our medical team
             </p>
           </div>
