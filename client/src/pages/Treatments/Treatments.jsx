@@ -4,6 +4,7 @@ import { fetchTreatments } from "../../stores/actions/treatmentAction";
 import Loader from "../../components/Loader/Loader";
 import bgimg from "../../assets/bgdoctor.jpg";
 import TreatmentCard from "../../components/ui/TreatmentCard";
+import  Skeleton  from "../../components/Loader/SkeletonLoader.jsx"; //
 
 export default function Treatments() {
   const dispatch = useDispatch();
@@ -25,8 +26,8 @@ export default function Treatments() {
   return (
     <div className="flex flex-col">
       {xloading ? (
-        <div className="flex justify-center items-center bg-white h-screen">
-          <Loader />
+        <div className="flex justify-center items-center bg-white h-screen pt-32">
+          <Skeleton />
         </div>
       ) : (
         <div>
